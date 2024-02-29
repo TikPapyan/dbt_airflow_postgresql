@@ -40,46 +40,4 @@ jobs:
       env:
         DBT_NAME: ${{ secrets.DB_NAME }}
         DBT_USER: ${{ secrets.DB_USER }}
-        DBT_PASS: ${{ secrets.DB_PASS }}    name: DBT Workflow
-
-on:
-  push:
-    branches:
-      - main
-
-env:
-    DBT_NAME: ${{ secrets.DB_NAME }}
-    DBT_USER: ${{ secrets.DB_USER }}
-    DBT_PASS: ${{ secrets.DB_PASS }}
-
-jobs:
-  setup_run_test_dbt:
-    runs-on: ubuntu-latest
-    timeout-minutes: 90
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.8'
-
-    - name: Install dbt
-      run: pip install dbt-postgres
-      working-directory: ./
-
-    - name: Run dbt
-      run: dbt run --profiles-dir . --target dev
-      env:
-        DBT_NAME: ${{ secrets.DB_NAME }}
-        DBT_USER: ${{ secrets.DB_USER }}
-        DBT_PASS: ${{ secrets.DB_PASS }}    
-
-    - name: Test dbt models
-      run: dbt test --profiles-dir . --target dev
-      env:
-        DBT_NAME: ${{ secrets.DB_NAME }}
-        DBT_USER: ${{ secrets.DB_USER }}
         DBT_PASS: ${{ secrets.DB_PASS }}    
