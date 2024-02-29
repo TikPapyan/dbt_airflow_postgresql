@@ -5,9 +5,16 @@ on:
     branches:
       - main
 
+env:
+    DBT_NAME: ${{ secrets.DB_NAME }}
+    DBT_USER: ${{ secrets.DB_USER }}
+    DBT_PASS: ${{ secrets.DB_PASS }}
+
 jobs:
   setup_run_test_dbt:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
+    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -15,26 +22,10 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.8' # Choose the Python version compatible with your dbt project
+        python-version: '3.8'
 
     - name: Install dbt
-      run: pip install dbt-postgres # Install the appropriate dbt adapter
-
-    - name: Create dbt profiles.yml
-      run: |
-        mkdir -p ~/.dbt
-        echo "nba_dbt_project:" > ~/.dbt/profiles.yml
-        echo "  outputs:" >> ~/.dbt/profiles.yml
-        echo "    dev:" >> ~/.dbt/profiles.yml
-        echo "      dbname: ${{ secrets.DB_NAME }}" >> ~/.dbt/profiles.yml
-        echo "      host: localhost" >> ~/.dbt/profiles.yml
-        echo "      pass: ${{ secrets.DB_PASS }}" >> ~/.dbt/profiles.yml
-        echo "      port: 5432" >> ~/.dbt/profiles.yml
-        echo "      schema: public" >> ~/.dbt/profiles.yml
-        echo "      threads: 1" >> ~/.dbt/profiles.yml
-        echo "      type: postgres" >> ~/.dbt/profiles.yml
-        echo "      user: ${{ secrets.DB_USER }}" >> ~/.dbt/profiles.yml
-        echo "  target: dev" >> ~/.dbt/profiles.yml
+      run: pip install dbt-postgres
 
     - name: Run dbt models
       run: dbt run --profiles-dir ~/.dbt
@@ -43,4 +34,3 @@ jobs:
     - name: Test dbt models
       run: dbt test --profiles-dir ~/.dbt
       working-directory: ./path/to/your/dbt/project
-
