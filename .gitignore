@@ -1,0 +1,3 @@
+dbt/logs
+dbt/nba_dbt_project/tests
+airflow/logs
