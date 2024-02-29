@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -22,6 +23,7 @@ jobs:
 
       - name: Setup Dynamic profiles.yml
         run: |
+          mkdir -p ./dbt/nba_dbt_project
           echo "nba_dbt_project:" > ./dbt/profiles.yml
           echo "  target: dev" >> ./dbt/profiles.yml
           echo "  outputs:" >> ./dbt/profiles.yml
@@ -34,13 +36,16 @@ jobs:
           echo "      pass: ${{ secrets.DB_PASS }}" >> ./dbt/profiles.yml
           echo "      dbname: ${{ secrets.DB_NAME }}" >> ./dbt/profiles.yml
           echo "      schema: public" >> ./dbt/profiles.yml
-        working-directory: ./dbt
+
+      - name: Install dbt dependencies
+        run: dbt deps
+        working-directory: ./dbt/nba_dbt_project
 
       - name: Run dbt models
-        run: dbt run --profiles-dir .
+        run: dbt run --profiles-dir ../
         working-directory: ./dbt/nba_dbt_project
 
       - name: Test dbt models
-        run: dbt test --profiles-dir .
+        run: dbt test --profiles-dir ../
         working-directory: ./dbt/nba_dbt_project
 
