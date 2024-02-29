@@ -1,0 +1,5 @@
+[2024-02-29T12:28:30.485+0400] {processor.py:161} INFO - Started process (PID=580000) to work on /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py
+[2024-02-29T12:28:30.485+0400] {processor.py:830} INFO - Processing file /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py for tasks to queue
+[2024-02-29T12:28:30.486+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:30.486+0400] {dagbag.py:540} INFO - Filling up the DagBag from /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py
+[2024-02-29T12:28:30.488+0400] {processor.py:842} WARNING - No viable dags retrieved from /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py
+[2024-02-29T12:28:30.496+0400] {processor.py:183} INFO - Processing /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py took 0.014 seconds

@@ -1,0 +1,60 @@
+[2024-02-29T12:28:30.431+0400] {manager.py:469} INFO - Processing files using up to 1 processes at a time 
+[2024-02-29T12:28:30.432+0400] {manager.py:470} INFO - Process each file at most once every 30 seconds
+[2024-02-29T12:28:30.432+0400] {manager.py:471} INFO - Checking for new files in /home/scylla/airflow/dags every 300 seconds
+[2024-02-29T12:28:30.432+0400] {manager.py:738} INFO - Searching for files in /home/scylla/airflow/dags
+[2024-02-29T12:28:30.446+0400] {manager.py:741} INFO - There are 48 files in /home/scylla/airflow/dags
+[2024-02-29T12:28:30.585+0400] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                                                                                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------------------------------------------------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/subdags/subdag.py                                                                    0           0  0.10s           2024-02-29T08:28:30
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_params_ui_tutorial.py                                                        0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_kubernetes_executor.py                                                       0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_local_kubernetes_executor.py                                                 0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_task_group_decorator.py                                                      0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_sla_dag.py                                                                   0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_sensor_decorator.py                                                          0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_bash_operator.py                                                             0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_latest_only_with_trigger.py                                                  0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_passing_params_via_test_command.py                                           0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_branch_operator.py                                                           0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_nested_branch_dag.py                                                         0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py                                                  0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_branch_datetime_operator.py                                                  0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_xcom.py                                                                      0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_python_operator.py                                                           0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_short_circuit_decorator.py                                                   0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_dynamic_task_mapping_with_no_taskflow_operators.py                           0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_branch_labels.py                                                             0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_complex.py                                                                   0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_datasets.py                                                                  0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_xcomargs.py                                                                  0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_trigger_target_dag.py                                                        0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_setup_teardown_taskflow.py                                                   0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial_taskflow_api.py                                                             0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_branch_python_dop_operator_3.py                                              0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_params_trigger_ui.py                                                         0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial_dag.py                                                                      0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_setup_teardown.py                                                            0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_sensors.py                                                                   0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_short_circuit_operator.py                                                    0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_skip_dag.py                                                                  0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_python_decorator.py                                                          0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_task_group.py                                                                0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_dag_decorator.py                                                             0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_dynamic_task_mapping.py                                                      0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_subdag_operator.py                                                           0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py                                               0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial_objectstorage.py                                                            0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_latest_only.py                                                               0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_time_delta_sensor_async.py                                                   0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial.py                                                                          0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_trigger_controller_dag.py                                                    0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_external_task_marker_dag.py                                                  0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_branch_operator_decorator.py                                                 0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/plugins/workday.py                                                                   0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/plugins/event_listener.py                                                            0           0
+/home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/plugins/listener_plugin.py                                                           0           0
+================================================================================

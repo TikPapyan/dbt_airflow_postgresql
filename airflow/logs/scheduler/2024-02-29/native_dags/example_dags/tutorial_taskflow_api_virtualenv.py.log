@@ -1,0 +1,6 @@
+[2024-02-29T12:28:40.316+0400] {processor.py:161} INFO - Started process (PID=580026) to work on /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py
+[2024-02-29T12:28:40.317+0400] {processor.py:830} INFO - Processing file /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py for tasks to queue
+[2024-02-29T12:28:40.318+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:40.317+0400] {dagbag.py:540} INFO - Filling up the DagBag from /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py
+[2024-02-29T12:28:40.320+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:40.320+0400] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2024-02-29T12:28:40.320+0400] {processor.py:842} WARNING - No viable dags retrieved from /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py
+[2024-02-29T12:28:40.329+0400] {processor.py:183} INFO - Processing /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py took 0.016 seconds

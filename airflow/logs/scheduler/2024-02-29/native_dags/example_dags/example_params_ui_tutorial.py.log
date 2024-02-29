@@ -1,0 +1,11 @@
+[2024-02-29T12:28:33.964+0400] {processor.py:161} INFO - Started process (PID=580012) to work on /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_params_ui_tutorial.py
+[2024-02-29T12:28:33.965+0400] {processor.py:830} INFO - Processing file /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_params_ui_tutorial.py for tasks to queue
+[2024-02-29T12:28:33.966+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:33.966+0400] {dagbag.py:540} INFO - Filling up the DagBag from /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_params_ui_tutorial.py
+[2024-02-29T12:28:33.980+0400] {processor.py:840} INFO - DAG(s) 'example_params_ui_tutorial' retrieved from /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_params_ui_tutorial.py
+[2024-02-29T12:28:34.135+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:34.135+0400] {override.py:1769} INFO - Created Permission View: can read on DAG:example_params_ui_tutorial
+[2024-02-29T12:28:34.144+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:34.144+0400] {override.py:1769} INFO - Created Permission View: can edit on DAG:example_params_ui_tutorial
+[2024-02-29T12:28:34.162+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:34.161+0400] {override.py:1769} INFO - Created Permission View: can delete on DAG:example_params_ui_tutorial
+[2024-02-29T12:28:34.162+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:34.162+0400] {dag.py:3047} INFO - Sync 1 DAGs
+[2024-02-29T12:28:34.178+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:34.177+0400] {dag.py:3069} INFO - Creating ORM DAG for example_params_ui_tutorial
+[2024-02-29T12:28:34.178+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:34.178+0400] {dag.py:3834} INFO - Setting next_dagrun for example_params_ui_tutorial to None, run_after=None
+[2024-02-29T12:28:34.230+0400] {processor.py:183} INFO - Processing /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_params_ui_tutorial.py took 0.268 seconds

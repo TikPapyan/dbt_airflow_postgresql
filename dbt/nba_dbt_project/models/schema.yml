@@ -1,0 +1,77 @@
+version: 2
+
+models:
+  - name: player_demographics
+    description: "Aggregate demographic information of NBA players."
+    config:
+      materialized: view
+
+  - name: geographic_diversity
+    description: "Analysis of the geographic diversity of NBA players."
+    config:
+      materialized: view
+
+  - name: players_longevity
+    description: "Analysis of players' career longevity."
+    config:
+      materialized: view
+
+  - name: performance_metrics
+    description: "Performance metrics of NBA players."
+    config:
+      materialized: view
+
+sources:
+  - name: public
+    description: "Public schema in the PostgreSQL database."
+    tables:
+      - name: nba_players
+        description: "Table containing NBA player data."
+        columns:
+          - name: field1
+            description: "A unique identifier for each player."
+            tests:
+              - unique
+              - not_null
+          - name: "player name"
+            description: "The name of the player."
+          - name: "team abbreviation"
+            description: "The abbreviation of the team."
+          - name: age
+            description: "The age of the player."
+          - name: "player height"
+            description: "The height of the player."
+          - name: "player weight"
+            description: "The weight of the player."
+          - name: college
+            description: "The college that the player attended."
+          - name: country
+            description: "The country of origin of the player."
+          - name: "draft year"
+            description: "The year the player was drafted."
+          - name: "draft round"
+            description: "The round of the draft in which the player was picked."
+          - name: "draft number"
+            description: "The draft number at which the player was picked."
+          - name: gp
+            description: "The number of games played by the player."
+          - name: pts
+            description: "The average number of points scored by the player."
+          - name: reb
+            description: "The average number of rebounds made by the player."
+          - name: ast
+            description: "The average number of assists made by the player."
+          - name: "net rating"
+            description: "The net efficiency rating of the player."
+          - name: "oreb pct"
+            description: "The offensive rebound percentage of the player."
+          - name: "dreb pct"
+            description: "The defensive rebound percentage of the player."
+          - name: "usg pct"
+            description: "The usage percentage of the player."
+          - name: "ts pct"
+            description: "The true shooting percentage of the player."
+          - name: "ast pct"
+            description: "The assist percentage of the player."
+          - name: season
+            description: "The NBA season."

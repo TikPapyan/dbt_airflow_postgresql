@@ -1,0 +1,11 @@
+[2024-02-29T12:28:36.601+0400] {processor.py:161} INFO - Started process (PID=580018) to work on /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_sla_dag.py
+[2024-02-29T12:28:36.602+0400] {processor.py:830} INFO - Processing file /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_sla_dag.py for tasks to queue
+[2024-02-29T12:28:36.603+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:36.603+0400] {dagbag.py:540} INFO - Filling up the DagBag from /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_sla_dag.py
+[2024-02-29T12:28:36.618+0400] {processor.py:840} INFO - DAG(s) 'example_sla_dag' retrieved from /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_sla_dag.py
+[2024-02-29T12:28:36.703+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:36.702+0400] {override.py:1769} INFO - Created Permission View: can read on DAG:example_sla_dag
+[2024-02-29T12:28:36.713+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:36.712+0400] {override.py:1769} INFO - Created Permission View: can edit on DAG:example_sla_dag
+[2024-02-29T12:28:36.733+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:36.732+0400] {override.py:1769} INFO - Created Permission View: can delete on DAG:example_sla_dag
+[2024-02-29T12:28:36.734+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:36.733+0400] {dag.py:3047} INFO - Sync 1 DAGs
+[2024-02-29T12:28:36.755+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:36.754+0400] {dag.py:3069} INFO - Creating ORM DAG for example_sla_dag
+[2024-02-29T12:28:36.766+0400] {logging_mixin.py:188} INFO - [2024-02-29T12:28:36.766+0400] {dag.py:3834} INFO - Setting next_dagrun for example_sla_dag to 2024-02-29 08:26:00+00:00, run_after=2024-02-29 08:28:00+00:00
+[2024-02-29T12:28:36.781+0400] {processor.py:183} INFO - Processing /home/scylla/nba_project/myenv/lib/python3.10/site-packages/airflow/example_dags/example_sla_dag.py took 0.185 seconds
