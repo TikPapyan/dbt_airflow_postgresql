@@ -6,9 +6,7 @@ on:
       - main
 
 env:
-    DBT_NAME: ${{ secrets.DB_NAME }}
-    DBT_USER: ${{ secrets.DB_USER }}
-    DBT_PASS: ${{ secrets.DB_PASS }}
+  DBT_PROFILE_DIR: ${{ github.workspace }}/dbt/nba_dbt_project
 
 jobs:
   setup_run_test_dbt:
@@ -26,18 +24,20 @@ jobs:
 
     - name: Install dbt
       run: pip install dbt-postgres
-      working-directory: ./
 
-    - name: Run dbt
-      run: dbt run --profiles-dir . --target dev
+    - name: Run dbt models
+      run: dbt run --profiles-dir ${{ env.DBT_PROFILE_DIR }} --target dev
       env:
-        DBT_NAME: ${{ secrets.DB_NAME }}
-        DBT_USER: ${{ secrets.DB_USER }}
-        DBT_PASS: ${{ secrets.DB_PASS }}    
+        DB_NAME: ${{ secrets.DB_NAME }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASS: ${{ secrets.DB_PASS }}
+      working-directory: ./dbt/nba_dbt_project
 
     - name: Test dbt models
-      run: dbt test --profiles-dir . --target dev
+      run: dbt test --profiles-dir ${{ env.DBT_PROFILE_DIR }} --target dev
       env:
-        DBT_NAME: ${{ secrets.DB_NAME }}
-        DBT_USER: ${{ secrets.DB_USER }}
-        DBT_PASS: ${{ secrets.DB_PASS }}    
+        DB_NAME: ${{ secrets.DB_NAME }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASS: ${{ secrets.DB_PASS }}
+      working-directory: ./dbt/nba_dbt_project
+
