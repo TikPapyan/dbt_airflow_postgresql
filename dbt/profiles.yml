@@ -1,0 +1,12 @@
+nba_dbt_project:
+  outputs:
+    dev:
+      dbname: ${{ secrets.DB_NAME }}
+      host: localhost
+      pass: ${{ secrets.DB_PASS }}
+      port: 5432
+      schema: public
+      threads: 1
+      type: postgres
+      user: ${{ secrets.DB_USER }}
+  target: dev
