@@ -162,6 +162,18 @@ dbt docs serve --port 8081
 
  - Adjust the port if necessary.
 
+## GitHub Actions for CI/CD
+
+1. **Create GitHub Actions worfklow**
+
+```
+mkdir ~/nba_project/.github/workflows
+```
+
+2. Use the provided dbt.yml from the repository to create the workflow.
+
+3. When pushing the changes on the main branch, the GitHub Actions will run
+
 ## Metabase for Visualization
 
 1. **Install Metabase**
