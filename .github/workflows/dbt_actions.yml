@@ -1,64 +1,46 @@
-name: DBT Actions
+name: DBT Workflow
 
-# Defines when the action will run. 
 on:
   push:
     branches:
-      - main # Trigger on pushes to the main branch
+      - main
 
 jobs:
-  dbt-run-and-test:
+  setup_run_test_dbt:
     runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres:14
-        env:
-          POSTGRES_USER: ${{ secrets.DB_USER }}
-          POSTGRES_PASSWORD: ${{ secrets.DB_PASS }}
-          POSTGRES_DB: ${{ secrets.DB_NAME }}
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.8'
+        python-version: '3.8' # Choose the Python version compatible with your dbt project
 
     - name: Install dbt
-      run: pip install dbt-postgres
+      run: pip install dbt-postgres # Install the appropriate dbt adapter
 
-    - name: Setup dbt profiles.yml
+    - name: Create dbt profiles.yml
       run: |
         mkdir -p ~/.dbt
         echo "nba_dbt_project:" > ~/.dbt/profiles.yml
-        echo "  target: dev" >> ~/.dbt/profiles.yml
         echo "  outputs:" >> ~/.dbt/profiles.yml
         echo "    dev:" >> ~/.dbt/profiles.yml
-        echo "      type: postgres" >> ~/.dbt/profiles.yml
+        echo "      dbname: ${{ secrets.DB_NAME }}" >> ~/.dbt/profiles.yml
         echo "      host: localhost" >> ~/.dbt/profiles.yml
-        echo "      user: ${{ secrets.DB_USER }}" >> ~/.dbt/profiles.yml
         echo "      pass: ${{ secrets.DB_PASS }}" >> ~/.dbt/profiles.yml
         echo "      port: 5432" >> ~/.dbt/profiles.yml
-        echo "      db: ${{ secrets.DB_NAME }}" >> ~/.dbt/profiles.yml
         echo "      schema: public" >> ~/.dbt/profiles.yml
         echo "      threads: 1" >> ~/.dbt/profiles.yml
+        echo "      type: postgres" >> ~/.dbt/profiles.yml
+        echo "      user: ${{ secrets.DB_USER }}" >> ~/.dbt/profiles.yml
+        echo "  target: dev" >> ~/.dbt/profiles.yml
 
     - name: Run dbt models
-      run: |
-        cd dbt/nba_dbt_project
-        dbt run
+      run: dbt run --profiles-dir ~/.dbt
+      working-directory: ./path/to/your/dbt/project
 
     - name: Test dbt models
-      run: |
-        cd dbt/nba_dbt_project
-        dbt test
+      run: dbt test --profiles-dir ~/.dbt
+      working-directory: ./path/to/your/dbt/project
 
