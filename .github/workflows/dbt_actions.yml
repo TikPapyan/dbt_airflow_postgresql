@@ -30,7 +30,7 @@ jobs:
           echo "    dev:" >> ./dbt/profiles.yml
           echo "      type: postgres" >> ./dbt/profiles.yml
           echo "      threads: 1" >> ./dbt/profiles.yml
-          echo "      host: localhost" >> ./dbt/profiles.yml
+          echo "      host: 192.168.11.238" >> ./dbt/profiles.yml
           echo "      port: 5432" >> ./dbt/profiles.yml
           echo "      user: '${{ secrets.DB_USER }}'" >> ./dbt/profiles.yml
           echo "      pass: '${{ secrets.DB_PASS }}'" >> ./dbt/profiles.yml
