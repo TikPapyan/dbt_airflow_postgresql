@@ -8,9 +8,9 @@ on:
 jobs:
   dbt_run_and_test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -22,29 +22,25 @@ jobs:
 
       - name: Setup Dynamic profiles.yml
         run: |
-          mkdir -p ${{ github.workspace }}/dbt/nba_dbt_project
-          echo "nba_dbt_project:" > ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "  outputs:" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "    dev:" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "      dbname: ${{ secrets.DB_NAME }}" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "      host: localhost" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "      pass: ${{ secrets.DB_PASS }}" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "      port: 5432" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "      schema: public" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "      threads: 1" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "      type: postgres" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "      user: ${{ secrets.DB_USER }}" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-          echo "  target: dev" >> ${{ github.workspace }}/dbt/nba_dbt_project/profiles.yml
-
-      - name: Install dbt dependencies
-        run: dbt deps
-        working-directory: ./dbt/nba_dbt_project
+          echo "nba_dbt_project:" > ./dbt/profiles.yml
+          echo "  target: dev" >> ./dbt/profiles.yml
+          echo "  outputs:" >> ./dbt/profiles.yml
+          echo "    dev:" >> ./dbt/profiles.yml
+          echo "      type: postgres" >> ./dbt/profiles.yml
+          echo "      threads: 1" >> ./dbt/profiles.yml
+          echo "      host: ${{ secrets.DB_HOST }}" >> ./dbt/profiles.yml
+          echo "      port: 5432" >> ./dbt/profiles.yml
+          echo "      user: ${{ secrets.DB_USER }}" >> ./dbt/profiles.yml
+          echo "      pass: ${{ secrets.DB_PASS }}" >> ./dbt/profiles.yml
+          echo "      dbname: ${{ secrets.DB_NAME }}" >> ./dbt/profiles.yml
+          echo "      schema: public" >> ./dbt/profiles.yml
+        working-directory: ./dbt
 
       - name: Run dbt models
-        run: dbt run --profiles-dir ${{ github.workspace }}/dbt/nba_dbt_project --target dev
+        run: dbt run --profiles-dir .
         working-directory: ./dbt/nba_dbt_project
 
       - name: Test dbt models
-        run: dbt test --profiles-dir ${{ github.workspace }}/dbt/nba_dbt_project --target dev
+        run: dbt test --profiles-dir .
         working-directory: ./dbt/nba_dbt_project
 
