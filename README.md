@@ -3,6 +3,7 @@
 This project showcases the construction of an end-to-end data pipeline, emphasizing the integration of diverse technologies to facilitate the process of downloading NBA player data, transforming it, and visualizing the insights.
 
 ![Project Architecture](https://github.com/TikPapyan/dbt_airflow_postgresql/blob/main/screenshots/Test%20Data%20Pipeline%20Volume%202.png)
+*Project Architecture*
 
 ## Technologies Used
 
@@ -101,6 +102,7 @@ mkdir airflow/dags
  - Add your Kaggle username and key in Airflow Variables through the web interface.
 
 ![Kaggle API credentials in Airflow Variables](https://github.com/TikPapyan/dbt_airflow_postgresql/blob/main/screenshots/kaggle_credentials.png)
+*Kaggle API credentials in Airflow Variables*
 
 ## PostgreSQL Setup
 
@@ -126,6 +128,7 @@ GRANT ALL PRIVILEGES ON DATABASE your_db TO your_user;  # Grant the new user ful
  - Add your PostgreSQL database credentials in Airflow Variables through the web interface.
 
 ![PostgreSQL database credentials in Airflow Variables](https://github.com/TikPapyan/dbt_airflow_postgresql/blob/main/screenshots/postgres_credentials.png)
+*PostgreSQL database credentials in Airflow Variables*
 
 4. **Create Table Structure**
 
@@ -191,6 +194,7 @@ cd nba_dbt_project
  - Enter database connection details as prompted by dbt init. Use secure practices for handling credentials.
 
 ![dbt init prompt](https://github.com/TikPapyan/dbt_airflow_postgresql/blob/main/screenshots/dbt_init.png)
+*dbt init prompt*
 
 4. **Create dbt Models**
 
@@ -221,7 +225,10 @@ dbt test
 ```
 
 ![dbt run result](https://github.com/TikPapyan/dbt_airflow_postgresql/blob/main/screenshots/dbt_run.png)
+*dbt run result*
+
 ![dbt test result](https://github.com/TikPapyan/dbt_airflow_postgresql/blob/main/screenshots/dbt_test.png)
+*dbt test result*
 
 6. **Generate and Serve dbt Documentation**
 
