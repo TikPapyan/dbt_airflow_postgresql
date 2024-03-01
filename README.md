@@ -2,6 +2,8 @@
 
 This project showcases the construction of an end-to-end data pipeline, emphasizing the integration of diverse technologies to facilitate the process of downloading NBA player data, transforming it, and visualizing the insights.
 
+![Project Architecture](https://github.com/TikPapyan/dbt_airflow_postgresql/blob/main/screenshots/Test%20Data%20Pipeline%20Volume%202.png)
+
 ## Technologies Used
 
 - **Kaggle NBA players dataset**: Source of NBA player statistics and demographics.
